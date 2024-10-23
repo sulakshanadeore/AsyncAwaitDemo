@@ -2,7 +2,7 @@
 {
     private static void Main(string[] args)
     {
-       // Console.WriteLine("Hello, World!");
+        // Console.WriteLine("Hello, World!");
         //M1();
         //M2();
 
@@ -14,17 +14,17 @@
 
 
     static async void CallMethod()
-    { 
-    Task<int> task=ReturnInt();
+    {
+        Task<int> task = ReturnInt();
 
         M2();
         int cnt = await task;
         Print(cnt);
     }
-        static async Task<int> ReturnInt()
+    static async Task<int> ReturnInt()
     {
         int cnt = 0;
-        await Task.Run(()=>
+        await Task.Run(() =>
         {
             for (int i = 0; i < 100; i++)
             {
@@ -32,8 +32,8 @@
             }
         }
         );
-        return cnt; 
-    
+        return cnt;
+
     }
 
     static void M2()
@@ -45,8 +45,8 @@
         }
 
 
-
-        static void Print(int cnt)
+    }
+    static void Print(int cnt)
     {
         Console.WriteLine("Count= " + cnt);
     }
@@ -54,15 +54,16 @@
     static async Task M1()
     {
         await Task.Delay(2000);
-        
-            for (int i = 0; i < 10; i++)
-            {
-                Console.WriteLine(i);
-            }
-       
+
+        for (int i = 0; i < 10; i++)
+        {
+            Console.WriteLine(i);
+        }
+
     }
 
-    
-    
-    }
+
+
+
 }
+
